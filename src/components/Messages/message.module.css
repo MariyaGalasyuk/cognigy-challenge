@@ -1,0 +1,24 @@
+.messageItem{
+    width: fit-content;
+    padding: 5px;
+    border-radius: 3px;
+    max-width: 40%;
+    color:white;
+    margin-bottom: 5px;
+}
+.messageItem.received{
+    margin-right: auto;
+    text-align: left;
+    background-color: #818385;
+    
+}
+
+.imageContainer img{
+    max-width: 100%;
+}
+.messageItem.sent{
+    margin-left: auto;
+    text-align: right;
+
+    background-color: #5288c1;
+}
