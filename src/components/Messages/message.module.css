@@ -1,24 +1,47 @@
-.messageItem{
-    width: fit-content;
-    padding: 5px;
-    border-radius: 3px;
-    max-width: 40%;
-    color:white;
-    margin-bottom: 5px;
+.messageItem {
+  width: fit-content;
+  padding: 8px 12px;
+  border-radius: 8px;
+  max-width: 40%;
+  color: black;
+  margin-bottom: 12px;
 }
-.messageItem.received{
-    margin-right: auto;
-    text-align: left;
-    background-color: #818385;
-    
+.messageItem.received {
+  margin-right: auto;
+  text-align: left;
+  background-color: white;
+  position: relative;
 }
-
-.imageContainer img{
-    max-width: 100%;
+.sb1:before {
+  content: "";
+  width: 0px;
+  height: 0px;
+  position: absolute;
+  border-left: 8px solid transparent;
+  border-right: 8px solid white;
+  border-top: 8px solid white;
+  border-bottom: 8px solid transparent;
+  left: -14px;
+  top: 4px;
 }
-.messageItem.sent{
-    margin-left: auto;
-    text-align: right;
-
-    background-color: #5288c1;
+.sb2:before {
+  content: "";
+  width: 0px;
+  height: 0px;
+  position: absolute;
+  border-left: 8px solid #c0d2e7;
+  border-right: 8px solid transparent;
+  border-top: 8px solid #c0d2e7;
+  border-bottom: 8px solid transparent;
+  right: -14px;
+  top: 4px;
+}
+.imageContainer img {
+  max-width: 100%;
+}
+.messageItem.sent {
+  margin-left: auto;
+  text-align: right;
+  position: relative;
+  background-color: #c0d2e7;
 }

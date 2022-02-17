@@ -1,8 +1,8 @@
-import { Button, Fab, TextField } from '@mui/material';
+import { Button, Input } from '@mui/material';
 import React, { useState } from 'react';
-import NavigationIcon from '@mui/icons-material/Navigation';
+import PersonOutlineIcon from '@mui/icons-material/PersonOutline';
 import style from './bottomPanel.module.css'
-import { IMessage } from '../../interfaces/message';
+import InputAdornment from '@mui/material/InputAdornment';
 
 interface IPanelProps {
     sendData: (message: string) => void
@@ -27,12 +27,15 @@ export default function BottomPanel({ sendData }: IPanelProps): JSX.Element {
     }
     return (
         <div className={style.bottomPanel}>
-            <TextField
+            <Input
                 id="filled-basic"
-                label="Send message"
-                variant="filled"
+                startAdornment={
+                    <InputAdornment position="start">
+                      <PersonOutlineIcon sx={{color: "white !important"}} />
+                    </InputAdornment>
+                  }
                 value={textMessage}
-                style={{ width: '70%' }}
+                sx={{ width: '70%', color: "white !important" }}
                 onChange={(e) => setText(e.target.value)}
                 onKeyDown={handleEnterPressed}
             />

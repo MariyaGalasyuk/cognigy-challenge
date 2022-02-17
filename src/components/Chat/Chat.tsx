@@ -18,7 +18,7 @@ const Chat: FC = () => {
     const messagesData = useAppSelector(messages)
 
     useEffect(() => {
-        ws.current = new SocketClient(" https://endpoint-trial.cognigy.ai", "c62c5fbea632152a4e3265f21862b91e21eacca1f135a1a07b031a0c6f5c6274", {
+        ws.current = new SocketClient("https://endpoint-trial.cognigy.ai", "c62c5fbea632152a4e3265f21862b91e21eacca1f135a1a07b031a0c6f5c6274", {
             // if you use node, internet explorer or safari, you need to enforce websockets
             forceWebsockets: true,
         });
@@ -32,7 +32,6 @@ const Chat: FC = () => {
 
         ws.current.on('output', (output: IOutput) => {
             dispatch(getMessage({ message: output, type: 'received' }))
-            console.log(output.text, output.data);
         })
 
     }, []);
@@ -53,9 +52,9 @@ const Chat: FC = () => {
     }
 
     return (
-        <Paper className={styles.chat} >
+        <Paper className={styles.chat} sx={{borderRadius: '20px'}}>
             <Messages messages={messagesData.messages} />
-            <Divider />
+            <Divider light/>
             <BottomPanel sendData={sendingData} />
         </Paper>
 
