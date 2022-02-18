@@ -3,7 +3,7 @@ import styles from './chat.module.css'
 import React, { FC, useCallback, useEffect, useRef } from 'react';
 import { SocketClient } from "@cognigy/socket-client"
 import { IOutput } from '../../interfaces/message';
-import { messages, getMessage, sendMessage } from '../../features/messagesSlice'
+import { messages, getMessage } from '../../features/messagesSlice'
 import { useAppDispatch, useAppSelector } from '../../store/hooks';
 import { Messages } from '../Messages/Messages';
 import BottomPanel from '../BottomPanel/BottomPanel';
@@ -34,7 +34,7 @@ const Chat: FC = () => {
             dispatch(getMessage({ message: output, type: 'received' }))
         })
 
-    }, []);
+    }, [dispatch]);
 
     const sendingData = (message: string) => {
         if (!ws.current) return;
