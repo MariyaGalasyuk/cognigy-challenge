@@ -1,8 +1,9 @@
-import { Button, Input } from '@mui/material';
+import { Button, InputBase } from '@mui/material';
 import React, { useState } from 'react';
 import PersonOutlineIcon from '@mui/icons-material/PersonOutline';
 import style from './bottomPanel.module.css'
 import InputAdornment from '@mui/material/InputAdornment';
+import SendIcon from '@mui/icons-material/Send';
 
 interface IPanelProps {
     sendData: (message: string) => void
@@ -27,7 +28,7 @@ export default function BottomPanel({ sendData }: IPanelProps): JSX.Element {
     }
     return (
         <div className={style.bottomPanel}>
-            <Input
+            <InputBase
                 id="filled-basic"
                 startAdornment={
                     <InputAdornment position="start">
@@ -40,11 +41,12 @@ export default function BottomPanel({ sendData }: IPanelProps): JSX.Element {
                 onKeyDown={handleEnterPressed}
             />
             <Button
-                variant="outlined"
-                size="large"
+                size="medium"
                 style={{ width: '25%' }}
+                endIcon={<SendIcon />}
                 onClick={handleButtonClick}
                 onKeyDown={handleEnterPressed}
+                sx={{color:"white !important"}}
             >
                 Send
             </Button>
